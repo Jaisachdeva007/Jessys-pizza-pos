@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./img/Screenshot 2024-01-24 at 12.02.48 AM.png">
+    <title>Jessys Greenwood POS</title>
+    <link rel="stylesheet" href="PizzaPos.css">
+</head>
+<body>
+
+    <h1>
+        <img src="./img/Screenshot 2024-01-24 at 12.02.48 AM.png">
+    </h1>
+    
+    <div id="menu">
+        <h2>Menu</h2>
+        <button onclick="showSpecials()">Specials</button>
+        <div id="specials-list">
+            <button onclick="addItem('Special#1', 31.99)">Special#1 - $31.99</button>
+            <button onclick="addItem('Special#2', 41.99)">Special#2 - $41.99</button>
+            <button onclick="addItem('Special#3', 20.99)">Special#3 - $20.99</button>
+            <button onclick="addItem('Special#4', 18.99)">Special#4 - $18.99</button>
+            <button onclick="addItem('Special#5', 26.99)">Special#5 - $26.99</button>
+            <button onclick="addItem('Special#6', 15.99)">Special#6 - $15.99</button>
+            <button onclick="addItem('Special#7', 21.99)">Special#7 - $21.99</button>
+            <button onclick="addItem('Special#8', 26.99)">Special#8 - $26.99</button>
+            <button onclick="addItem('Special#9', 35.99)">Special#9 - $35.99</button>
+            <button onclick="addItem('Special#10', 31.50)">Special#10 - $31.50</button>
+            <button onclick="addItem('Special#11', 24.99)">Special#11 - $24.99</button>
+            <button onclick="addItem('Special#12', 37.99)">Special#12 - $37.99</button>
+            <button onclick="addItem('Special#13', 41.99)">Special#13 - $41.99</button>
+        </div>
+        
+        <button onclick="showClassicPizza()">Classic Pizza</button>
+        <div id="classic-pizza-list">
+            <button onclick="addClassicPizza('Small', 12.40)">Small - $12.40</button>
+            <button onclick="addClassicPizza('Medium', 17.99)">Medium - $17.99</button>
+            <button onclick="addClassicPizza('Large', 24.99)">Large - $24.99</button>
+            <button onclick="addClassicPizza('X Large', 29.99)">X Large - $29.99</button>
+            <button onclick="addExtraTopping()">Extra Toppings - $1.99 per topping</button>
+        </div>
+        <button onclick="showGourmentPizza()">Gourment Pizza</button>
+        <div id = "gourment-pizza-list">
+            <button onclick="addClassicPizza('Small', 13.99)">Small - $13.99</button>
+            <button onclick="addClassicPizza('Medium', 18.99)">Medium - $18.99</button>
+            <button onclick="addClassicPizza('Large', 27.99)">Large - $27.99</button>
+            <button onclick="addClassicPizza('X Large', 33.99)">X Large - $33.99</button>
+            <button onclick="addExtraTopping()">Extra Toppings - $1.99 per topping</button>  
+        </div>
+        <button onclick="showCreateYourOwnPizza()">Create Your Own Pizza</button>
+        <div id="create-your-own-pizza-list" style="display: none;">
+            <button onclick="addItem('Cheese Pizza - Small', 10.50)">Small Cheese Pizza - $10.50</button>
+            <button onclick="addItem('Cheese Pizza - Medium', 13.40)">Medium Cheese Pizza - $13.40</button>
+            <button onclick="addItem('Cheese Pizza - Large', 17.95)">Large Cheese Pizza - $17.95</button>
+            <button onclick="addItem('Cheese Pizza - XLarge', 22.19)">XLarge Cheese Pizza - $22.19</button>
+            <button onclick="addItem('small reg topping', 0.5)">small reg topping - $0.5</button>
+            <button onclick="addItem('med reg topping', 1)">med reg topping - $1</button>
+            <button onclick="addItem('lg reg topping', 1.5)">lg reg topping - $1.5</button>
+            <button onclick="addItem('xl reg topping', 1.75)">xl reg topping - $1.75</button>
+            <button onclick="addItem('small pre topping', 2.35)">small prem topping - $2.35</button>
+            <button onclick="addItem('med pre topping', 3.2)">med prem topping - $3.2</button>
+            <button onclick="addItem('lg pr topping', 4)">lg prem topping - $4</button>
+            <button onclick="addItem('xl prem topping', 5)">xl prem topping - $5</button>
+            <button onclick="addItem('sm stuff crust', 4)">sm stuff crust - $4</button>
+            <button onclick="addItem('med stuff crust', 5)">med stuff crust - $5</button>
+            <button onclick="addItem('lg stuff crust', 6)">lg stuff crust - $6</button>
+            <button onclick="addItem('xl stuff crust', 7)">xl stuff crust - $7</button>
+        </div>
+        <button onclick="showGarlicFingers()">Garlic Fingers</button>
+        <div id="garlic-fingers-list" style="display: none;">
+            <button onclick="addItem('Regular Garlic Fingers - Small', 9.99)">Regular Garlic Fingers - Small - $9.99</button>
+            <button onclick="addItem('Regular Garlic Fingers - Medium', 13.75)">Regular Garlic Fingers - Medium - $13.75</button>
+            <button onclick="addItem('Regular Garlic Fingers - Large', 18.49)">Regular Garlic Fingers - Large - $18.49</button>
+            <button onclick="addItem('Regular Garlic Fingers - XLarge', 22.99)">Regular Garlic Fingers - XLarge - $22.99</button>
+            
+            <button onclick="addItem('4 Cheese Garlic Fingers - Small', 13.99)">4 Cheese Garlic Fingers - Small - $13.99</button>
+            <button onclick="addItem('4 Cheese Garlic Fingers - Medium', 17.49)">4 Cheese Garlic Fingers - Medium - $17.49</button>
+            <button onclick="addItem('4 Cheese Garlic Fingers - Large', 23.49)">4 Cheese Garlic Fingers - Large - $23.49</button>
+            <button onclick="addItem('4 Cheese Garlic Fingers - XLarge', 29.99)">4 Cheese Garlic Fingers - XLarge - $29.99</button>
+        </div>
+        <button onclick="showFishAndChips()">Fish & Chips</button>
+        <div id="fish-and-chips-list" style="display: none;">
+            <button onclick="addItem('1 pc Fish & Chips', 9.99)">1 pc Fish & Chips - $9.99</button>
+            <button onclick="addItem('2 pcs Fish & Chips', 14.99)">2 pcs Fish & Chips - $14.99</button>
+            <button onclick="addItem('3 pcs Fish & Chips', 16.99)">3 pcs Fish & Chips - $16.99</button>
+            <button onclick="addItem('5 pcs Fish & Chips', 27.99)">5 pcs Fish & Chips - $27.99</button>
+            <button onclick="addItem('10 pcs Fish & Chips with Gravy', 48.99)">10 pcs Fish & Chips with Gravy - $48.99</button>
+        </div>
+        <button onclick="showChickenAndChips()">Chicken & Chips</button>
+        <div id="chicken-and-chips-list" style="display: none;">
+            <button onclick="addItem('Chicken Fingers & Chips - 3 pcs', 12.99)">Chicken Fingers & Chips - 3 pcs - $12.99</button>
+            <button onclick="addItem('Chicken Fingers & Chips - 5 pcs', 16.99)">Chicken Fingers & Chips - 5 pcs - $16.99</button>
+            <button onclick="addItem('3 pcs Chicken & Chips', 15.99)">3 pcs Chicken & Chips - $15.99</button>
+            <button onclick="addItem('5 pcs Chicken & Chips', 26.99)">5 pcs Chicken & Chips - $26.99</button>
+            <button onclick="addItem('10 pcs Chicken & Chips with Gravy', 48.99)">10 pcs Chicken & Chips with Gravy - $48.99</button>
+        </div>
+        <button onclick="showBeefDonairs()">Jessy's Beef Donairs</button>
+        <div id="beef-donairs-list" style="display: none;">
+            <button onclick="addItem('Donair Dippers - 6 pcs', 6.99)">Donair Dippers - 6 pcs - $6.99</button>
+            <button onclick="addItem('Donair Dippers - 12 pcs', 12.99)">Donair Dippers - 12 pcs - $12.99</button>
+            <button onclick="addItem('Donair Plate - Small', 13.99)">Donair Plate - Small - $13.99</button>
+            <button onclick="addItem('Donair Plate - Large', 16.99)">Donair Plate - Large - $16.99</button>
+            <button onclick="addItem('Small Donair', 9.50)">Small Donair - $9.50</button>
+            <button onclick="addItem('Medium Donair', 12.49)">Medium Donair - $12.49</button>
+            <button onclick="addItem('Large Donair', 14.49)">Large Donair - $14.49</button>
+            <button onclick="addItem('Super Donair', 16.99)">Super Donair - $16.99</button>
+            <button onclick="addItem('Our Special Donair Loaded with Fried', 18.99)">Our Special Donair Loaded with Fried - $18.99</button>
+            <button onclick="addItem('2 Donair Eggrolls', 5.99)">2 Donair Eggrolls - $5.99</button>
+        </div>
+        <button onclick="showPanzarottis()">Panzarottis</button>
+        <div id="panzarottis-list" style="display: none;">
+            <button onclick="addItem('Donair Panzarotti', 16.99)">Donair Panzarotti - $16.99</button>
+            <button onclick="addItem('Pizza Panzarotti', 16.99)">Pizza Panzarotti - $16.99</button>
+        </div>
+        <button onclick="showHomemadeBurgers()">Homemade Burgers</button>
+        <div id="homemade-burgers-list" style="display: none;">
+            <button onclick="addItem('Hamburger', 6.99)">Hamburger - $6.99</button>
+            <button onclick="addItem('Cheeseburger', 8.49)">Cheeseburger - $8.49</button>
+            <button onclick="addItem('Chicken Burger', 8.49)">Chicken Burger - $8.49</button>
+            <button onclick="addItem('Grilled Chicken Burger', 7.99)">Grilled Chicken Burger - $7.99</button>
+            <button onclick="addItem('Donair Burger', 6.99)">Donair Burger - $6.99</button>
+        </div>
+        <button onclick="showTraditionalWings()">Traditional Wings</button>
+        <div id="traditional-wings-list" style="display: none;">
+            <button onclick="addItem('10 Pcs. Wings', 14.99)">10 Pcs. Wings - $14.99</button>
+            <button onclick="addItem('20 Pcs. Wings', 26.99)">20 Pcs. Wings - $26.99</button>
+        </div>
+        <button onclick="showNachos()">Nachos</button>
+        <div id="nachos-list" style="display: none;">
+            <button onclick="addItem('9 inch Small Nachos', 14.99)">9" Small Nachos - $14.99</button>
+            <button onclick="addItem('12 inch Medium Nachos', 19.99)">12" Medium Nachos - $19.99</button>
+            <button onclick="addItem('16 inch Large Nachos', 25.99)">16" Large Nachos - $25.99</button>
+        </div>
+        <button onclick="showPoutines()">Poutines</button>
+        <div id="poutines-list" style="display: none;">
+            <button onclick="addItem('Regular Poutine - Small', 7.99)">Regular Poutine - Small - $7.99</button>
+            <button onclick="addItem('Regular Poutine - Large', 10.49)">Regular Poutine - Large - $10.49</button>
+            
+            <button onclick="addItem('Donair Poutine - Small', 9.99)">Donair Poutine - Small - $9.99</button>
+            <button onclick="addItem('Donair Poutine - Large', 12.99)">Donair Poutine - Large - $12.99</button>
+            
+            <button onclick="addItem('Steak Poutine - Small', 9.99)">Steak Poutine - Small - $9.99</button>
+            <button onclick="addItem('Steak Poutine - Large', 12.99)">Steak Poutine - Large - $12.99</button>
+            
+            <button onclick="addItem('Greek Poutine - Small', 9.99)">Greek Poutine - Small - $9.99</button>
+            <button onclick="addItem('Greek Poutine - Large', 12.99)">Greek Poutine - Large - $12.99</button>
+            
+            <button onclick="addItem('Chicken Poutine - Small', 9.99)">Chicken Poutine - Small - $9.99</button>
+            <button onclick="addItem('Chicken Poutine - Large', 12.99)">Chicken Poutine - Large - $12.99</button>
+            
+            <button onclick="addItem('Hamburger Poutine - Small', 9.99)">Hamburger Poutine - Small - $9.99</button>
+            <button onclick="addItem('Hamburger Poutine - Large', 12.99)">Hamburger Poutine - Large - $12.99</button>
+        </div>
+        <button onclick="showWraps()">Wraps</button>
+        <div id="wraps-list" style="display: none;">
+            <button onclick="addItem('Philly Steak Wrap', 12.99)">Philly Steak Wrap - $12.99</button>
+            <button onclick="addItem('Pizza Wrap', 11.99)">Pizza Wrap - $11.99</button>
+            <button onclick="addItem('Turkey Wrap', 11.99)">Turkey Wrap - $11.99</button>
+            <button onclick="addItem('Spicy Chicken Wrap', 11.99)">Spicy Chicken Wrap - $11.99</button>
+            <button onclick="addItem('Jessys Club Wrap', 11.99)">Jessy's Club Wrap - $11.99</button>
+            <button onclick="addItem('Cold Cut Wrap', 11.99)">Cold Cut Wrap - $11.99</button>
+            <button onclick="addItem('BLT & Ham Wrap', 11.99)">BLT & Ham Wrap - $11.99</button>
+            <button onclick="addItem('Donair Wrap', 11.99)">Donair Wrap - $11.99</button>
+            <button onclick="addItem('Bubba Donair Wrap', 11.99)">Bubba Donair Wrap - $11.99</button>
+            <button onclick="addItem('Chicken Caesar Wrap', 11.99)">Chicken Caesar Wrap - $11.99</button>
+            <button onclick="addItem('Veggie Wrap', 8.99)">Veggie Wrap - $8.99</button>
+        </div>
+        <button onclick="showSubs()">Subs</button>
+        <div id="subs-list" style="display: none;">
+            <button onclick="addItem('Philly Steak Sub - Small', 10.99)">Philly Steak Sub - Small - $10.99</button>
+            <button onclick="addItem('Philly Steak Sub - Large', 13.99)">Philly Steak Sub - Large - $13.99</button>
+        
+            <button onclick="addItem('Pizza Sub - Small', 9.99)">Pizza Sub - Small - $9.99</button>
+            <button onclick="addItem('Pizza Sub - Large', 12.00)">Pizza Sub - Large - $12.00</button>
+        
+            <button onclick="addItem('Turkey Sub - Small', 9.99)">Turkey Sub - Small - $9.99</button>
+            <button onclick="addItem('Turkey Sub - Large', 12.99)">Turkey Sub - Large - $12.99</button>
+        
+            <button onclick="addItem('Spicy Chicken Sub - Small', 10.99)">Spicy Chicken Sub - Small - $10.99</button>
+            <button onclick="addItem('Spicy Chicken Sub - Large', 13.99)">Spicy Chicken Sub - Large - $13.99</button>
+        
+            <button onclick="addItem('Jessys Club Sub - Small', 9.99)">Jessy's Club Sub - Small - $9.99</button>
+            <button onclick="addItem('Jessys Club Sub - Large', 12.99)">Jessy's Club Sub - Large - $12.99</button>
+        
+            <button onclick="addItem('Cold Cut Sub - Small', 9.99)">Cold Cut Sub - Small - $9.99</button>
+            <button onclick="addItem('Cold Cut Sub - Large', 12.99)">Cold Cut Sub - Large - $12.99</button>
+        
+            <button onclick="addItem('BLT & Ham Sub - Small', 9.99)">BLT & Ham Sub - Small - $9.99</button>
+            <button onclick="addItem('BLT & Ham Sub - Large', 11.99)">BLT & Ham Sub - Large - $11.99</button>
+        
+            <button onclick="addItem('Donair Sub - Small', 10.99)">Donair Sub - Small - $10.99</button>
+            <button onclick="addItem('Donair Sub - Large', 13.99)">Donair Sub - Large - $13.99</button>
+        
+            <button onclick="addItem('Bubba Donair Sub - Small', 10.99)">Bubba Donair Sub - Small - $10.99</button>
+            <button onclick="addItem('Bubba Donair Sub - Large', 13.99)">Bubba Donair Sub - Large - $13.99</button>
+        
+            <button onclick="addItem('Veggie Sub - Small', 8.15)">Veggie Sub - Small - $8.15</button>
+            <button onclick="addItem('Veggie Sub - Large', 9.50)">Veggie Sub - Large - $9.50</button>
+        </div>
+        <button onclick="showSalads()">Salads</button>
+        <div id="salads-list" style="display: none;">
+            <button onclick="addItem('Garden Salad - Small', 8.45)">Garden Salad - Small - $8.45</button>
+            <button onclick="addItem('Garden Salad - Large', 10.50)">Garden Salad - Large - $10.50</button>
+        
+            <button onclick="addItem('Greek Salad - Small', 8.45)">Greek Salad - Small - $8.45</button>
+            <button onclick="addItem('Greek Salad - Large', 10.50)">Greek Salad - Large - $10.50</button>
+        
+            <button onclick="addItem('Caesar Salad - Small', 8.45)">Caesar Salad - Small - $8.45</button>
+            <button onclick="addItem('Caesar Salad - Large', 10.50)">Caesar Salad - Large - $10.50</button>
+        
+            <button onclick="addItem('Chicken Caesar Salad - Small', 10.49)">Chicken Caesar Salad - Small - $10.49</button>
+            <button onclick="addItem('Chicken Caesar Salad - Large', 12.99)">Chicken Caesar Salad - Large - $12.99</button>
+        </div>
+
+        <button onclick="showOtherFavourites()">Other Favourites</button>
+        <div id="other-favourites-list" style="display: none;">
+            <button onclick="addItem('Mozza Sticks & Chips - 4 Pcs', 7.99)">Mozza Sticks & Chips - 4 Pcs - $7.99</button>
+            <button onclick="addItem('Mozza Sticks & Chips - 6 Pcs', 9.99)">Mozza Sticks & Chips - 6 Pcs - $9.99</button>
+        
+            <button onclick="addItem('French Fries - Small', 5.49)">French Fries - Small - $5.49</button>
+            <button onclick="addItem('French Fries - Large', 6.49)">French Fries - Large - $6.49</button>
+        
+            <button onclick="addItem('Regular Club House with Fries', 12.99)">Regular Club House with Fries - $12.99</button>
+            <button onclick="addItem('Chicken Club House with Fries', 13.99)">Chicken Club House with Fries - $13.99</button>
+            <button onclick="addItem('Super Club House with Fries', 13.99)">Super Club House with Fries - $13.99</button>
+        
+            <button onclick="addItem('BLT & Chips', 11.99)">BLT & Chips - $11.99</button>
+            <button onclick="addItem('Lasagna & Garlic Bread', 12.99)">Lasagna & Garlic Bread - $12.99</button>
+        
+            <button onclick="addItem('Onion Rings', 8.99)">Onion Rings - $8.99</button>
+            <button onclick="addItem('Hot Grilled Chicken Sandwich & Fries', 12.99)">Hot Grilled Chicken Sandwich & Fries - $12.99</button>
+        
+            <button onclick="addItem('Hot Hamburger Sandwich & Fries', 11.99)">Hot Hamburger Sandwich & Fries - $11.99</button>
+            <button onclick="addItem('Garlic Bread with Cheese', 5.99)">Garlic Bread with Cheese - $5.99</button>
+        
+            <button onclick="addItem('Potato Wedges', 16.99)">Potato Wedges - $16.99</button>
+            <button onclick="addItem('Deep Fried Pickles', 8.99)">Deep Fried Pickles - $8.99</button>
+        </div>
+        <button onclick="showDips()">Dips</button>
+        <div id="dips-list" style="display: none;">
+            <button onclick="addItem('Small Donair Sauce', 1.99)">Small Donair Sauce - $1.99</button>
+            <button onclick="addItem('Large Donair Sauce', 2.99)">Large Donair Sauce - $2.99</button>
+            <button onclick="addItem('Ranch Dip', 1.49)">Ranch Dip - $1.49</button>
+            <button onclick="addItem('Creamy Garlic Dip', 1.49)">Creamy Garlic Dip - $1.49</button>
+            <button onclick="addItem('Sweet & Sour Sauce', 1.99)">Sweet & Sour Sauce - $1.99</button>
+            <button onclick="addItem('Tartar Sauce', 0.75)">Tartar Sauce - $0.75</button>
+            <button onclick="addItem('Small Mild Sauce', 1.99)">Small Mild Sauce - $1.99</button>
+            <button onclick="addItem('Large Mild Sauce', 2.99)">Large Mild Sauce - $2.99</button>
+            <button onclick="addItem('Small Medium Sauce', 1.99)">Small Medium Sauce - $1.99</button>
+            <button onclick="addItem('Large Medium Sauce', 2.99)">Large Medium Sauce - $2.99</button>
+            <button onclick="addItem('Small Hot Sauce', 1.99)">Small Hot Sauce - $1.99</button>
+            <button onclick="addItem('Large Hot Sauce', 2.99)">Large Hot Sauce - $2.99</button>
+        </div>
+        <button onclick="showDrinks()">Drinks</button>
+        <div id="drinks-list" style="display: none;">
+            <button onclick="addItem('Chocolate Milk', 2.59)">Chocolate Milk - $2.59</button>
+            <button onclick="addItem('Juice', 2.59)">Juice - $2.59</button>
+            <button onclick="addItem('Bottle of Water', 2.09)">Bottle of Water - $2.09</button>
+            <button onclick="addItem('Can of Pop', 1.70)">Can of Pop - $1.70</button>
+            <button onclick="addItem('Bottle of Pop (500 ml)', 2.65)">Bottle of Pop (500 ml) - $2.65</button>
+            <button onclick="addItem('Bottle of Pop (2L)', 3.55)">Bottle of Pop (2L) - $3.55</button>
+            <button onclick="addItem('Monster Energy', 3.67)">Monster Energy - $3.67</button>
+        </div>
+        <button class="category-button" onclick="toggleToppings('regular')">Regular Toppings</button>
+        <div id="regular-toppings" class="toppings-list">
+            <button class="item-button" onclick="addItem('small reg topping', 0.5)">Small Regular Topping - $0.5</button>
+            <button class="item-button" onclick="addItem('med reg topping', 1)">Medium Regular Topping - $1</button>
+            <button class="item-button" onclick="addItem('lg reg topping', 1.5)">Large Regular Topping - $1.5</button>
+            <button class="item-button" onclick="addItem('xl reg topping', 1.75)">XLarge Regular Topping - $1.75</button>
+        </div>
+        
+        <button class="category-button" onclick="toggleToppings('premium')">Premium Toppings</button>
+        <div id="premium-toppings" class="toppings-list">
+            <button class="item-button" onclick="addItem('small pre topping', 2.35)">Small Premium Topping - $2.35</button>
+            <button class="item-button" onclick="addItem('med pre topping', 3.2)">Medium Premium Topping - $3.2</button>
+            <button class="item-button" onclick="addItem('lg pr topping', 4)">Large Premium Topping - $4</button>
+            <button class="item-button" onclick="addItem('xl prem topping', 5)">XLarge Premium Topping - $5</button>
+        </div>
+
+    </div>
+
+    
+    <div id="order-container">
+        <div id="selected-items">
+            <h2>Selected Items</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody id="order-list"></tbody>
+            </table>
+            <p>Subtotal: $<span id="subtotal">0.00</span></p>
+            <p>Tax (15%): $<span id="tax">0.00</span></p>
+            <h3>Total: $<span id="total">0.00</span></h3>
+        </div>
+    
+        <div id="order-summary">
+            <h2>Order Summary</h2>
+            <button onclick="finalizeOrder()">Finalize Order</button>
+            <button onclick="resetOrder()">Reset Order</button>
+        </div>
+    </div>
+
+<script src="PizzaPos.js"></script>
+</body>
+</html>

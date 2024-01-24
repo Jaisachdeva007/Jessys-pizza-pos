@@ -1,0 +1,101 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+    background-color: #f9f9f9; /* Light grey background for less strain on eyes */
+}
+h1{
+    background-color: #071AC8;
+    border-radius: 8px;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.1);
+}
+img{
+    width: 300px;
+    padding: 0%;
+}
+
+button {
+    padding: 10px 15px; /* Uniform padding */
+    margin: 10px; /* Slightly more space between buttons */
+    font-size: 16px;
+    background-color: #007bff; /* A nice blue shade */
+    color: white; /* White text for better contrast */
+    border: 1px solid #007bff; /* Border color similar to background for a solid look */
+    border-radius: 5px; /* Rounded corners for buttons */
+    cursor: pointer; /* Cursor to pointer to indicate clickable */
+    transition: background-color 0.3s, transform 0.1s; /* Smooth transition for hover effects */
+}
+
+button:hover, button:focus {
+    background-color: #0056b3; /* Darker shade when hovered for a nice effect */
+    transform: scale(1.05); /* Slightly larger on hover for interactive feedback */
+}
+
+#order-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items to start for better control */
+}
+
+#menu {
+    
+    text-align: left;
+    padding: 20px;
+    border-right: 2px solid #ddd;
+    background-color: #ffffff; /* White background for menu for distinction */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    border-radius: 8px; /* Rounded corners for menu */
+}
+
+
+
+#selected-items, #order-summary {
+    width: 50%;
+    padding: 20px;
+    background-color: #ffffff; /* White background for distinction */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Consistent with menu styling */
+    border-radius: 8px; /* Consistent with menu styling */
+    margin-bottom: 20px; /* Space below the boxes */
+    margin: 40px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f1f1f1; /* Slightly different background for headers for distinction */
+}
+
+#order-summary {
+    text-align: center; /* Center align the order summary text */
+}
+
+/* Hide all lists initially */
+#specials-list,
+#classic-pizza-list,
+#gourment-pizza-list,
+#fish-and-chips-list,
+#chicken-and-chips-list,
+#beef-donairs-list,
+#panzarottis-list,
+#homemade-burgers-list,
+#traditional-wings-list,
+#nachos-list,
+#poutines-list,
+#wraps-list,
+#subs-list,
+#salads-list,
+#other-favourites-list,
+#dips-list,
+#drinks-list,#create-your-own-pizza,.toppings-list {
+    display: none;
+}
